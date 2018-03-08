@@ -10,14 +10,13 @@ import { environment } from '../environments/environment';
 import { AuthModule } from './auth/auth.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { DesignerComponent } from './designer/designer.component';
+import { DesignerModule } from './designer/designer.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavigationComponent,
-    DesignerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +24,7 @@ import { DesignerComponent } from './designer/designer.component';
     AuthModule,
     AppRoutingModule,
     FormsModule,
+    DesignerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

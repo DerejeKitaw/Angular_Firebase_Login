@@ -11,7 +11,10 @@ const routes: Routes = [
   { path: 'pub/login', component: LoginComponent },
   { path: 'pub/signup', component: SignupComponent },
   { path: 'pub/homepage', component: HomePageComponent },
-  { path: 'designer', component: DesignerComponent , canActivate: [AuthGuard]}
+  { path: 'designer',
+  canActivate: [AuthGuard],
+   loadChildren: `app/designer/designer.module#DesignerModule` ,
+  }
 ];
 
 @NgModule({
