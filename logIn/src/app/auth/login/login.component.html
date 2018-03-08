@@ -1,10 +1,27 @@
-<h2>Log In</h2>
+<!-- <div class="form-container">
 
-<form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
-  <input type="text" placeholder="email" (ngModel)="email" name="email" required>
-  <input type="password" placeholder="password" (ngModel)="password" name="password" required>
-  <button mat--button type="submit" [disabled]="!formData.valid" class="auth-btn">Log In </button>
-</form>
-<hr/>
-<!-- <button (click)="loginGoogle()" class="google">
-  Login Using Google</button> -->
+  <h2>Log In</h2>
+  
+  <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+    <input type="text" placeholder="email" (ngModel)="email" name="email" required>
+    <input type="password" placeholder="password" (ngModel)="password" name="password" required>
+    <button mat--button type="submit" [disabled]="!formData.valid" class="auth-btn">Log In </button>
+  </form>
+  <hr/>
+</div>
+<a routerLink="/pub/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+<button (click)="loginGoogle()" class="google">
+  Login Using Google</button> --> 
+
+  <div class="form-container">
+      <img src="assets/images/lock.svg" id="lock">
+    
+        <span class="error" *ngIf="error">{{ error }}</span>
+    
+      <!-- <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+      <button (click)="loginGoogle()" id="google">Login With Google</button> -->
+      <button routerLink="/pub/login-email"  id="email">Email</button>
+      
+      <a routerLink="/pub/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+    </div>
+

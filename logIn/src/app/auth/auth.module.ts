@@ -10,6 +10,7 @@ import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 
 const firebaseConfig = {
   // insert you config here
@@ -19,6 +20,7 @@ const firebaseConfig = {
     CommonModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
+    RouterModule,
     FormsModule
   ],
   providers: [AuthService, AuthGuard],

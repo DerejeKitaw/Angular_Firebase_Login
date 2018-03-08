@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "./scss/core/core";
+
+
+
+
+
+
+.basic-btn {
+    background: #3B8598;
+    color:white;
+}
+
+
+
+
+
+.alc {
+    text-align:center;
+    display:block;
+    margin: 15px 0;
+}
+
+.error {
+    background:#f1f0ef;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
+
+
+
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding-top:1.2em;
+    }
+
+    .form-container {
+        padding:1.2em;
+        width:90%;
+        margin-left:-45%;
+    }
+    button {
+        font-size:1em;
+    }
+}

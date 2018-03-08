@@ -9,7 +9,8 @@ import 'rxjs/add/operator/switchMap';
 export class AuthService {
   private LANDING_PAGE = '/designer';
   public currentUser: firebase.User;
-
+  state = '';
+  error: any;
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router) {
@@ -23,7 +24,9 @@ export class AuthService {
       .then(value => {
         this.router.navigateByUrl(this.LANDING_PAGE);
       })
-      .catch(err => {
+      .catch(error => {
+        console.log(error);
+          this.error = error;
       });
   }
 
@@ -34,11 +37,23 @@ export class AuthService {
         this.router.navigateByUrl(this.LANDING_PAGE);
       })
       .catch(error => {
+        console.log(error);
+        this.error = error;
       });
   }
 
   googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
+    return this.oAuthLogin(provider)
+      .then(value => {
+
+          this.router.navigateByUrl(this.LANDING_PAGE);
+      })
+      .catch(error => {
+      });
+  }
+  facebookLogin() {
+    const provider = new firebase.auth.FacebookAuthProvider;
     return this.oAuthLogin(provider)
       .then(value => {
 
