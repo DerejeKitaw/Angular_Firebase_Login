@@ -1,11 +1,10 @@
 html {
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serifHel;
     color: var(--dark);
     body {
         background:#E2E4E6;
-        padding-top:4em;
-        margin: 30px 50px;
+        // padding-top:4em;
+        margin: 0px 0px;
         line-height: 1.4;
         .btn {
             background: var(--dark);
@@ -13,9 +12,6 @@ html {
             padding: 0.6rem 1.3rem; // 1rem=fhont size of htm by default 16px
             text-decoration: none;
             border: 0;
-        }
-        img {
-            max-width: 100%;
         }
         .wrapper {
             display: grid;

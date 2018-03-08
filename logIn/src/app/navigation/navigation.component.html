@@ -1,5 +1,14 @@
 
-<nav class="main-nav" >
+<nav class="main-nav" *ngIf="authService.currentUser">
+    <ul>
+      <li><a routerLink="/pub/homepage">Homepage</a></li>
+      <li *ngIf="!authService.currentUser"><a routerLink="/pub/login" >Login</a></li>
+      <!-- <li *ngIf="!authService.currentUser"><a routerLink="/pub/signup" >Sign Up</a></li> -->
+      <li *ngIf="authService.currentUser"><a routerLink="/designer" >Designer</a></li>
+      <li *ngIf="authService.currentUser" class="right"> <a (click)="signOut()" >Sign Out</a></li>
+    </ul>
+  </nav>
+<nav class="main-nav-designer" *ngIf="!authService.currentUser">
     <ul>
       <li><a routerLink="/pub/homepage">Homepage</a></li>
       <li *ngIf="!authService.currentUser"><a routerLink="/pub/login" >Login</a></li>

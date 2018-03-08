@@ -1,14 +1,14 @@
-.main-nav ul{
+
+.main-nav-designer ul{
     display: grid;
     grid-gap: 1px;
     padding: 0;
     list-style: none;
-    grid-template-columns: repeat(3, 1fr); // same as grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); // same as grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
 
-
-.main-nav a {
+.main-nav-designer a {
     background: var(--primary);
     display: block;
     text-decoration: none;
@@ -23,7 +23,7 @@
     right: 0px;
     }
 }
-.main-nav a:hover{
+.main-nav-designer a:hover{
     background: var(--dark);
     color: var(--light);
 }
