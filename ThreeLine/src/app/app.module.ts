@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 // Firebase
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { AdminModule } from './admin/admin.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
