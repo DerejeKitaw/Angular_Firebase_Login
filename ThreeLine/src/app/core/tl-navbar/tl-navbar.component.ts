@@ -1,4 +1,7 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
+import { AppUser } from '../../shared/model/app-user';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'tl-navbar',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tl-navbar.component.scss']
 })
 export class TlNavbarComponent implements OnInit {
+  appUser: AppUser;
 
-  constructor() { }
+  constructor(private auth: AuthService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.auth.appUser$.subscribe(appUser => (this.appUser = appUser));
   }
 
+  logout() {
+    this.auth.logout();
+  }
 }
